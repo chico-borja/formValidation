@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="images/favicon.png">
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>		
+		<title>Hi Vic</title>
+		<link href="styles/bootstrap.min.css" rel="stylesheet">
+		<link href="styles/mods.css?v=20140327-3" rel="stylesheet">
+		<link href="styles/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+		<script type="text/javascript" src="javascript/jquery.min.js"></script>
+		<script src="javascript/Modernizr.js"></script>
+		<script type="text/javascript" src="javascript/formValidation.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<script>
+	$(document).ready(function(){
+			
+		function validateSSN() {
+							
+			this.setStatus( "untested" );
+								
+			var ssn = $("#"+this.id).val().replace(/\s+/g, ''); //get ssn input value and strip spaces
+										
+			if ( ssn.length < 11 ) {
+			
+				this.setStatus( "invalid" );
+				this.addError( "ssnTooShort" );
+				
+			} else {
+				
+				this.removeError( "ssnTooShort" );
+				
+			}
+			
+			if ( ssn.length < 11 ) {
+			
+				this.setStatus( "invalid" );
+				this.addError( "ssnTooShort" );
+				
+			} else {
+				
+				this.removeError( "ssnTooShort" );
+				
+			}
+			
+			adjustUI( this );
+							
+		}
+		
+		function validateDOB() {
+		
+			this.setStatus( "untested" );
+								
+			var dob = $("#"+this.id).val().replace(/\s+/g, '');
+			
+			if ( dob.length < 10 ) {
+			
+				this.setStatus( "invalid" );
+				this.addError( "dobTooShort" );
+				
+			} else {
+				
+				this.removeError( "dobTooShort" );
+				
+			}
+			
+			adjustUI( this );
+							
+		}
+		
+		function validateZip() {
+		
+			this.setStatus( "untested" );
+								
+			var zip = $("#"+this.id).val();
+			
+			var isFiveDigitNumber = new RegExp(/^\d{5}$/);
+			if (! isFiveDigitNumber.test( zip ) ) {
+				
+				this.setStatus( "invalid" );
+				this.addError( "zipNot5DigitNumber" );
+												
+			} else {
+			
+				this.removeError( "zipNot5DigitNumber" );
+				
+			}
+			
+			adjustUI( this );
+							
+		}
+		
+		//define page specific map of form inputs and accompanying validation logic
+		var formInputs = [
+			{id: "ssn", validate: validateSSN},
+			{id: "dob", validate: validateDOB},
+			{id: "zip", validate: validateZip}	
+		];
+
+		//create a new form object
+		var accountRegistrationIdentificationForm = new form( 'accountRegistrationIdentificationForm' );
+		
+		//load form inputs and validation logic
+		//use .call() to pass in the form object context
+		accountRegistrationIdentificationForm.loadInput.call(accountRegistrationIdentificationForm, formInputs );
+				
+		//define and load page specific error messages
+		loadErrorMessages( {
+			"ssnTooShort": "Your Social Security number is too short.  Please provide all nine digits.",
+			"dobTooShort": "Your date of birth is too short.  Please provide a two digit month, a two digit day, and a four digit year.",
+			"zipNot5DigitNumber": "Your zip code is not a five digit number.  Please provide a five digit number."
+		} );
+		
+		$('#ssn').focus();
+		
+		$('#continue').click(function(){
+			
+			return accountRegistrationIdentificationForm.validateForm();
+			
+		});
+		
+		$("#ssn").inputmask("999-99-9999", {placeholder:" ", showMaskOnHover: false});
+		$("#zip").inputmask("99999", {placeholder:" ", showMaskOnHover: false});
+		
+		if (Modernizr.touch && Modernizr.inputtypes.date) {
+	    
+        	document.getElementById('dob').type = 'date';
+        	
+    	} else {
+    	
+    	   $( "#dob" ).datepicker({
+				changeMonth: true,
+				changeYear: true,
+				dateFormat: "mm-dd-yy",
+				yearRange: "-100:-0",
+				defaultDate: "-20y",
+				showOn: "button",
+				buttonText: '<span class="glyphicon glyphicon-calendar"></span>'
+			});
+			
+			$("#dob").inputmask("mm-dd-yyyy", {placeholder:" ", showMaskOnHover: false, yearrange: { minyear: 1900, maxyear: 2014 }});
+			
+	    }
+		
+	});
+</script>
+<div class="col-xs-12">
+	<div id="main-column-container">
+		<div class="row">
+			<div class="col-sm-12">
+				<h3>Register for access to ___</h3>
+				<hr>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-4 col-sm-offset-4 text-center">
+				<div class="progress">
+					<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
+						<span class="sr-only">50% Complete</span>
+					</div>
+				</div>
+				<p class="text-muted small">The registration process is <strong>50%</strong> complete</p>
+				<hr>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-10 col-sm-offset-1 text-left">
+				<h4>Please re-enter this information to complete the email verification process</h4>
+				<br>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-xs-12 col-sm-7 col-sm-offset-1 text-left">
+				<form role="form" id="user-form" method="post" action="account-registration-process-step-4.php">
+					<div class="form-group">
+						<label class="control-label" for="ssn">Social Security number</label>
+						<input type="text" class="form-control" id="ssn" name="snn" placeholder="XXX-XX-XXXX">
+					</div>
+					<div class="form-group">
+						<label class="control-label" for="dob">Date of birth <span class="small">(MM-DD-YYYY)</span></label><br>
+						<input type="text" class="form-control inline" style="width:80%" id="dob" name="dob" placeholder="MM-DD-YYYY">
+					</div>
+					<div class="form-group">
+						<label class="control-label" for="zip">Zip code of your mailing address on file with TMRS</label>
+						<input type="text" class="form-control" id="zip" name="zip" pattern="[0-9]*" placeholder="Please enter your five digit zip code">
+					</div>
+					<div class="form-group">
+						<button type="submit" class="btn btn-primary" id="continue">Continue</button>
+					</div>
+				</form>
+			</div>
+		</div>
+
+			</div>
+			
+		</div>
+		<script src="javascript/bootstrap.min.js"></script> 
+		<script src="javascript/jquery-ui-1.10.3.custom.min.js"></script>
+		<script src="javascript/plugins.js"></script>
+		<script src="javascript/jquery.inputmask.js"></script>		
+		<script src="javascript/jquery.inputmask.date.extensions.js"></script>
+	</body>
+</html>

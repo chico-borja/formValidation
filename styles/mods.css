@@ -1,0 +1,233 @@
+body {background-image:url(../images/noisy-texture-250x250.png);}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, body {font-family:'Open Sans', Arial, Helvetica, Verdana, sans-serif;}
+
+select option {color:#111; margin-left:1em;}
+select option.disabled {color:#666; margin-left:12px;}
+
+option:disabled{color:#666;}
+
+input[type='password'] {font-family: Arial !important;}
+
+a.no-style {color:inherit; text-decoration:none;}
+
+.green {color:#3c763d;}
+.blue{color:#428bca;}
+.red{color:#a94442;}
+
+.first-header {margin-top:0;}
+
+h4 {line-height:1.4em;}
+.big-label {border-bottom:1px solid #eee; color:#333;}
+.big-data {font-size:1.6em; margin-bottom:.8em; margin-left:.3em;}
+.hide-details {display:none;}
+
+#change-user-name-form, #change-password-form, #change-cq-form {display:none;}
+.form-display-link {cursor:pointer;}
+
+.inline {display:inline;}
+h5 {font-size:1.1em;}
+
+.labelLink {font-size:12px; margin-left:1em;}
+
+/*navbar*/
+.navbar {
+	background-color: #F93;
+	background-image: -moz-linear-gradient(top, #FC9, #F93);
+	background-image: -ms-linear-gradient(top, #FFCC99, #FF9933);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FC9), to(#F93));
+	background-image: -webkit-linear-gradient(top, #FC9, #F93);
+	background-image: -o-linear-gradient(top, #FC9, #F93);
+	background-image: linear-gradient(top, #FC9, #F93);
+	background-repeat: repeat-x;
+	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#FFCC99', endColorstr='#FF9933', GradientType=0);
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.navbar-default .navbar-nav > li > a , .navbar-default .navbar-nav > li.active > a , .navbar-brand {color:#222 !important;}
+
+.navbar-brand {padding:5px 15px;}
+
+.navbar-default .navbar-text {color:#555;}
+
+.navbar-default .navbar-nav > .active > a:hover{background-color:#fc9;}
+
+.navbar-default .navbar-nav > .active > a:focus {background-color:#ff9933;}
+
+.navbar-default .navbar-nav > .active > a {
+	background-color: #fc9;
+	background-image: -moz-linear-gradient(top, #FC9, #F93);
+	background-image: -ms-linear-gradient(top, #FFCC99, #FF9933);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FC9), to(#F93));
+	background-image: -webkit-linear-gradient(top, #FC9, #F93);
+	background-image: -o-linear-gradient(top, #FC9, #F93);
+	background-image: linear-gradient(top, #FC9,  #F93);
+	background-repeat: repeat-x;
+	filter: progid:dximagetransform.microsoft.gradient(startColorstr='#FFCC99', endColorstr='#FF9933', GradientType=0);
+	background-position:0 25px;
+}
+
+.navbar-default .navbar-nav  > li:hover, 
+.navbar-default .navbar-nav > .active > a:focus {background-color:#ff9933;}
+
+.navbar-default.btn-navbar:hover,
+.navbar-default .btn-navbar:active,
+.navbar-default .btn-navbar.active,
+.navbar-default .btn-navbar.disabled,
+.navbar-default.btn-navbar[disabled] {background-color:#f93;}
+
+.navbar-default .btn-navbar .icon-bar {background-color:#f60;}
+
+.navbar-default .btn-navbar{background-color: #F93;
+background-image: -ms-linear-gradient(top, #FC9, #F93);
+background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FC9), to(#F93));
+background-image: -webkit-linear-gradient(top, #FC9, #F93);
+background-image: -o-linear-gradient(top, #FC9, #F93);
+background-image: linear-gradient(top, #FC9, #F93);
+background-image: -moz-linear-gradient(top, #FC9, #F93);
+background-repeat: repeat-x;
+border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);}
+
+.navbar-default .navbar-toggle {border-color:#f93;}
+
+.navbar-form {margin-top:0; margin-bottom:0;}
+
+@media (min-width: 768px) {
+	.navbar-nav > li > a {padding:15px 6px;}
+	.navbar-text {margin:15px 6px;}
+	.navbar-form {padding:0px 5px;}
+}
+
+/*actions box*/
+.height-adjustment {margin-top:58px;}
+#actions-container {background-color:#fff; padding:.25em 1em;}
+#actions-container > .list-unstyled  > li {font-size:.9em; margin:.5em .25em;}
+#actions-container > h4 {border-bottom:1px solid #eee; padding-bottom:.5em; margin-bottom:1em;}
+
+
+@media (min-width: 768px) {
+	#mytmrs-feature-list span{margin:0 1em !important;}
+	#mytmrs-feature-list li {font-size:1em !important;}
+}
+
+#mytmrs-feature-list span{margin:0 .5em 0 0;}
+#mytmrs-feature-list li {font-size:.85em;}
+
+
+/*membership tabs*/
+#olderMemberships {z-index:1025;}
+#membership-tabs > li > a {background-color:#555; color:#ffffff; padding:8px 10px;}
+#membership-tabs > li > a:hover {background-color:#222; border-color:#000;}
+#membership-tabs > li.active > a {background-color:#fff; color:#333; padding:8px 10px;}
+#membership-tabs > li.active > a:hover {background-color:#eee; border-color:#ddd; border-bottom-color:#fff; cursor:pointer;}
+#membership-tabs  {font-size:1em; margin-left:10px;}
+
+/*intra-membership nav buttons*/
+#membership-sub-nav  > a > button {margin-bottom:.5em;}
+
+#membership-container {background-color:#fff; }
+#main-column-container {background-color:#fff; padding:0 1em 2em 1em;}
+
+#membership-sub-nav {margin:1em 0;}
+
+.membership-summary-well .row {margin-bottom:.5em;}
+.membership-summary-well .col-xs-10{width:85%;}
+.membership-summary-well .col-xs-1{width:3%;}
+
+/*custom tables*/
+.table-hover > tbody > tr.no-hover-color-change:hover > td, .table-hover > tbody > tr.no-hover-color-change:hover > th {background-color:#fff !important;}
+.table-no-borders > thead > tr > th, .table-no-borders > tbody > tr > th, .table-no-borders > tfoot > tr > th, .table-no-borders > thead > tr > td, .table-no-borders > tbody > tr > td, .table-no-borders > tfoot > tr > td {border-top:none;}
+.details-toggle {width:18%;}
+
+.sortControlContainer {text-align:left;}
+
+
+.table-title {margin-bottom:.4em;}
+.table-title span{border-bottom:1px solid #eee; font-weight:bold;}
+.table {}
+.table .row {margin-bottom:.25em; min-height:22px;}
+.data-row:hover {background-color:#f5f5f5;}
+.sub-data-row:hover {background-color:#fcfcfc;}
+/*.table .row div[class*='col-'] {border-bottom:1px solid #eee; }*/
+.header-row  > div {font-weight:bold; height:100%; vertical-align:bottom;}
+.header-row  > div[class*='col-'] > span {vertical-align:bottom;}
+.header-cell {font-weight:bold;}
+
+.detail-row {display:none;}
+.sub-header-row {font-weight:bold;}
+.show-details, .hide-details {padding:0px;}
+
+.parent-row {position:relative;}
+.detail-row {position:relative; top:100px;}
+.total-row {border-top:1px solid #ddd;}
+
+.transaction-sub-table td {padding:0 1em;}
+#transactions-table td, #transactions-table th, #payments-table td, #payments-table th {vertical-align:top;}
+
+.transaction-sub-table th {padding-bottom:5px;}
+
+.transaction-sub-table .data-label {font-weight:bold;}
+
+.estimate-label {font-weight:bold; margin-top:5px;}
+
+#userNameContainer {margin-bottom:0px;}
+#checkUserNameAvailability {margin-right:1em;}
+#recaptcha-mask {display:none;}
+
+
+#page-footer {background-color:#fff; margin-top:2em; padding:1em;}
+
+/*
+table.dataTable tr.odd td.sorting_1 { background-color: #D3D6FF; }
+table.dataTable tr.odd td.sorting_2 { background-color: #DADCFF; }
+table.dataTable tr.odd td.sorting_3 { background-color: #E0E2FF; }
+table.dataTable tr.even td.sorting_1 { background-color: #EAEBFF; }
+table.dataTable tr.even td.sorting_2 { background-color: #F2F3FF; }
+table.dataTable tr.even td.sorting_3 { background-color: #F9F9FF; }
+*/
+
+/*
+ * Processing indicator
+ */
+.dataTables_processing {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 250px;
+	height: 30px;
+	margin-left: -125px;
+	margin-top: -15px;
+	padding: 14px 0 2px 0;
+	border: 1px solid #ddd;
+	text-align: center;
+	color: #999;
+	font-size: 14px;
+	background-color: white;
+}
+
+
+/*
+ * Sorting
+ */
+.sorting { background: url('../images/sort_both.png') no-repeat center right; }
+.sorting_asc { background: url('../images/sort_asc.png') no-repeat center right; }
+.sorting_desc { background: url('../images/sort_desc.png') no-repeat center right; }
+
+.sorting_asc_disabled { background: url('../images/sort_asc_disabled.png') no-repeat center right; }
+.sorting_desc_disabled { background: url('../images/sort_desc_disabled.png') no-repeat center right; }
+ 
+ 
+/*
+ * Scrolling
+ */
+.dataTables_scroll {
+	clear: both;
+}
+
+.dataTables_scrollBody {
+	*margin-top: -1px;
+	-webkit-overflow-scrolling: touch;
+}
+
